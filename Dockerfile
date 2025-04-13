@@ -4,14 +4,14 @@ WORKDIR /app-container
 
 COPY . /app-container/
 
-RUN pip install --upgrade pip
-
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 
 EXPOSE 5000
 
-ENV PYTHONDONTWRITEBYTECODE 1
+# Correct ENV format
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-ENV PYTHONUNBUFFERED 1
-
-CMD ["python", "manage.py", "runserver", 0.0.0:5000]
+# Use correct JSON array for CMD with properly quoted host:port
+CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]

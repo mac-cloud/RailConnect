@@ -34,5 +34,11 @@
  <b>python manage.py runserver</b><br><br>
  Enjoy the project.
  </p>
-  
-  
+
+## Use of Docker
+   <p>Make sure that,you have docker desktop installed
+ sudo systemctl start docker (for linux user):<br><br>
+ <b>navigate to the folder and run docker build -t <container name> .(in same directory)</b><br><br>
+ docker run <port:port> container name<br><br>
+ Enjoy the project.
+ </p>
